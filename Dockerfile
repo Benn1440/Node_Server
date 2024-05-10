@@ -10,6 +10,6 @@ COPY . .
 
 RUN npm run build
 
-EXPOSE port 3200
+EXPOSE 3200
 
 CMD [ "npm",  "run",  "dev" ]
