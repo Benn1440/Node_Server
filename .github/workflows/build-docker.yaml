@@ -14,8 +14,8 @@ jobs:
          username: ${{ secrets.USERNAME }}
          password: ${{ secrets.PASSWORD }}
          
-     - name: 
-        run: |
+     - name:
+         run: |
           docker build -t nodeserver:latest .
           docker tag nodeserver:latest benn1440/nodeserver:latest
           docker push benn1440/nodeserver:latest
