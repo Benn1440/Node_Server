@@ -18,9 +18,8 @@ FROM alpine:3.18
 WORKDIR /app
 
 # Copy the built binary from the previous stage
-COPY --from=builder /app/NODE_SERVER .
-
-#COPY package*.json ./
+#COPY --from=builder /app/NODE_SERVER .
+COPY package*.json ./
 
 #RUN npm install
 
