@@ -20,6 +20,28 @@ jobs:
           docker tag nodeserver:latest benn1440/nodeserver:latest
           docker push benn1440/nodeserver:latest
 
+
+  # argocd-sync:
+  #   needs: build-and-push
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #   - name: Checkout
+  #     uses: actions/checkout@v3
+
+  #   - name: Install ArgoCD CLI
+  #     run: |
+  #       curl -sSL -o argocd-linux-amd64 https://github.com/argoproj/argo-cd/releases/latest/download/argocd-linux-amd64
+  #       sudo install -m 555 argocd-linux-amd64 /usr/local/bin/argocd
+  #       rm argocd-linux-amd64
+
+  #   - name: Sync ArgoCD Application
+  #     run: |
+  #       argocd login ${{ secrets.ARGOCD_SERVER }} --username ${{ secrets.ARGOCD_USERNAME }} --password ${{ secrets.ARGOCD_PASSWORD }} --insecure
+  #       argocd app sync node-server
+  #     env:
+  #       ARGOCD_OPTS: --insecure
+
+
   #     - name: Set up minikube
   # # You may pin to the exact commit or the version.
   # # uses: sagikazarmark/setup-minikube-action@e6b5846a870453e5a33f9f3064c900db4deb47cd
