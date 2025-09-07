@@ -1,4 +1,4 @@
-FROM buildpack-deps:bullseye
+FROM node:18-alpine
 # Install Node.js and npm
 #RUN apk add --update nodejs npm
 
@@ -28,3 +28,19 @@ EXPOSE 3200
 
 # Set the default command to run the server
 CMD ["node", "server.js"]
+
+
+
+# FROM node:18-alpine
+
+# WORKDIR /app
+
+# COPY package*.json ./
+
+# RUN npm install
+
+# COPY . .
+
+# EXPOSE 3200
+
+# CMD ["node", "server.js"]
