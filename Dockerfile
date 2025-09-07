@@ -27,4 +27,4 @@ COPY package*.json ./
 EXPOSE 3200
 
 # Set the default command to run the server
-CMD [ "npm", "run", "start" ]
+CMD ["node", "server.js"]
